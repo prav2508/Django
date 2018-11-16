@@ -1,0 +1,11 @@
+<h1>Hello, Django</h1>
+<div>
+<b>  petname - age </b>
+  {% for pet in pets %}
+    <div class="petname">
+
+    <b>  {{pet.name}} = {{pet.age}}</b>
+
+    </div>
+  {% endfor %}
+</div>
