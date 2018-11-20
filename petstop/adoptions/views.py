@@ -6,7 +6,12 @@ from django.http import *
 
 from .models import Pet
 def home(request):
-    pets = Pet.objects.all()
+   
+    try:
+        pets = Pet.objects.all()
+    except Pet.DoesNotExist:
+        raise Http404('Pet not found')
+ 
     t = get_template("home.html")
     html = t.render({'pets': pets})
 
